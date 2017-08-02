@@ -16,3 +16,20 @@ function baz(foo) {
 
 
 //"use strict" mode would throw a reference error on line 14
+
+
+for(var i=0; i<5; i++){
+    (function IIFE() {
+        var j = i;  // creates a new j for every iteration
+        console.log(j);
+    })();
+}
+
+function diff(x,y) {
+    if(x > y){
+        let tmp = x; // tmp is attached to if statement block scope
+        x = y;
+        y = tmp;
+    }
+    return y -x;
+}
